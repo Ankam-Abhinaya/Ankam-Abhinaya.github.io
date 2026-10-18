@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ankam Abhinaya | CSE Portfolio</title>
+
+  <meta
+    name="description"
+    content="Portfolio of Ankam Abhinaya, B.Tech Computer Science and Engineering student."
+  >
+
+  <style>
+    /* =========================
+       GLOBAL STYLES
+    ========================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #07111f;
+      --bg2: #0b1729;
+      --card: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.12);
+      --text: #f8fafc;
+      --muted: #a9b6c7;
+      --primary: #38bdf8;
+      --secondary: #8b5cf6;
+      --accent: #22d3ee;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(56,189,248,0.12), transparent 30%),
+        radial-gradient(circle at 90% 20%, rgba(139,92,246,0.12), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(15px);
+      background: rgba(7, 17, 31, 0.82);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      max-width: 1150px;
+      margin: auto;
+      padding: 150px 25px 80px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hello {
+      color: var(--primary);
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 78px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary),
+        var(--accent)
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero h2 {
+      font-size: 25px;
+      color: #dbeafe;
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+      );
+
+      color: white;
+      border: none;
+    }
+
+    .btn-secondary {
+      background: var(--card);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(56,189,248,0.18);
+    }
+
+    /* HERO CARD */
+
+    .hero-card {
+      width: 320px;
+      min-width: 280px;
+      padding: 35px;
+      border-radius: 25px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(15px);
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    .profile-circle {
+      width: 130px;
+      height: 130px;
+      margin: auto;
+      margin-bottom: 20px;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 45px;
+      font-weight: 800;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--secondary)
+        );
+
+      color: white;
+    }
+
+    .hero-card h3 {
+      font-size: 23px;
+      margin-bottom: 5px;
+    }
+
+    .hero-card p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 100px 25px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .section-title span {
+      color: var(--primary);
+    }
+
+    .section-title p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-box {
+      max-width: 850px;
+      margin: auto;
+      padding: 35px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .about-box strong {
+      color: white;
+    }
+
+    /* =========================
+       EDUCATION
+    ========================= */
+
+    .education-card {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .education-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 5px;
+      background: linear-gradient(
+        var(--primary),
+        var(--secondary)
+      );
+    }
+
+    .education-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      margin: 5px 0;
+    }
+
+    .score {
+      color: var(--primary) !important;
+      font-weight: bold;
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+      gap: 20px;
+    }
+
+    .skill-card {
+      padding: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--primary);
+    }
+
+    .skill-icon {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       PROJECT
+    ========================= */
+
+    .project-card {
+      max-width: 900px;
+      margin: auto;
+
+      padding: 40px;
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(56,189,248,0.08),
+          rgba(139,92,246,0.08)
+        );
+
+      border: 1px solid var(--border);
+    }
+
+    .project-number {
+      color: var(--primary);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .project-card h3 {
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tech {
+      padding: 7px 13px;
+      border-radius: 20px;
+      background: rgba(56,189,248,0.1);
+      color: var(--primary);
+      border: 1px solid rgba(56,189,248,0.2);
+      font-size: 13px;
+    }
+
+    /* =========================
+       INTERNSHIPS
+    ========================= */
+
+    .timeline {
+      max-width: 850px;
+      margin: auto;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(
+        var(--primary),
+        var(--secondary)
+      );
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 55px;
+      margin-bottom: 35px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 7px;
+      top: 5px;
+
+      width: 18px;
+      height: 18px;
+
+      border-radius: 50%;
+
+      background: var(--primary);
+
+      box-shadow:
+        0 0 15px var(--primary);
+    }
+
+    .timeline-card {
+      padding: 25px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .timeline-card h3 {
+      font-size: 21px;
+      margin-bottom: 5px;
+    }
+
+    .company {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .timeline-card p {
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* =========================
+       CERTIFICATIONS
+    ========================= */
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+      gap: 20px;
+    }
+
+    .cert-card {
+      padding: 25px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      transition: 0.3s;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--secondary);
+    }
+
+    .cert-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .cert-card p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       LANGUAGES
+    ========================= */
+
+    .languages {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .language {
+      padding: 12px 20px;
+      border-radius: 30px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: #dbeafe;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-box {
+      max-width: 750px;
+      margin: auto;
+      text-align: center;
+
+      padding: 40px;
+
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      background: rgba(0,0,0,0.2);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 130px;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-card {
+        width: 100%;
+        max-width: 350px;
+      }
+
+      section {
+        padding: 75px 20px;
+      }
+
+      .section-title h2 {
+        font-size: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav>
+    <div class="nav-container">
+
+      <div class="logo">
+        AA.
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#internships">Internships</a></li>
+        <li><a href="#certifications">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <header class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="hello">
+        Hello, I'm
+      </div>
+
+      <h1>
+        Ankam <span>Abhinaya</span>
+      </h1>
+
+      <h2>
+        B.Tech Computer Science & Engineering
+      </h2>
+
+      <p class="hero-description">
+        Computer Science fresher skilled in Python and SQL,
+        with hands-on exposure to Artificial Intelligence,
+        full-stack development and cloud computing.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#projects" class="btn btn-primary">
+          View My Project
+        </a>
+
+        <a
+          href="http://www.linkedin.com/in/ankam-abhinaya"
+          target="_blank"
+          class="btn btn-secondary"
+        >
+          LinkedIn
+        </a>
+
+        <a
+          href="https://github.com/Ankam-Abhinaya"
+          target="_blank"
+          class="btn btn-secondary"
+        >
+          GitHub
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+      <div class="profile-circle">
+        AA
+      </div>
+
+      <h3>Ankam Abhinaya</h3>
+
+      <p>
+        Computer Science & Engineering
+      </p>
+
+      <br>
+
+      <p>
+        2023 – 2027
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       ABOUT
+  ========================== -->
+
+  <section id="about">
+
+    <div class="section-title">
+
+      <h2>About <span>Me</span></h2>
+
+      <p>
+        Get to know me
+      </p>
+
+    </div>
+
+    <div class="about-box">
+
+      <p>
+        I am a <strong>Computer Science and Engineering student</strong>
+        pursuing my B.Tech at Bapatla Women's Engineering College.
+      </p>
+
+      <br>
+
+      <p>
+        I am a Computer Science fresher skilled in
+        <strong>Python and SQL</strong>, with hands-on exposure to
+        <strong>AI, full-stack development and cloud computing</strong>
+        through academic projects and internships.
+      </p>
+
+      <br>
+
+      <p>
+        I am seeking an entry-level role where I can apply my
+        technical skills and contribute to organizational growth.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EDUCATION
+  ========================== -->
+
+  <section id="education">
+
+    <div class="section-title">
+
+      <h2>My <span>Education</span></h2>
+
+      <p>Academic background</p>
+
+    </div>
+
+    <div class="education-card">
+
+      <h3>
+        B.Tech – Computer Science & Engineering
+      </h3>
+
+      <p>
+        Bapatla Women's Engineering College
+      </p>
+
+      <p>
+        2023 – 2027
+      </p>
+
+      <p class="score">
+        Academic Score: 84%
+      </p>
+
+      <p>
+        Intermediate: 80%
+      </p>
+
+      <p>
+        10th Standard: 95%
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SKILLS
+  ========================== -->
+
+  <section id="skills">
+
+    <div class="section-title">
+
+      <h2>Technical <span>Skills</span></h2>
+
+      <p>Technologies and tools I work with</p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+
+        <div class="skill-icon">🐍</div>
+
+        <h3>Programming</h3>
+
+        <p>
+          Python, SQL
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-icon">🤖</div>
+
+        <h3>AI & Data</h3>
+
+        <p>
+          Generative AI, AI Fundamentals,
+          Power BI, Microsoft Excel
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-icon">💻</div>
+
+        <h3>Development</h3>
+
+        <p>
+          Full-Stack Development
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-icon">☁️</div>
+
+        <h3>Cloud</h3>
+
+        <p>
+          Cloud Computing Fundamentals
+        </p>
+
+      </div>
+
+
+      <div class="skill-card">
+
+        <div class="skill-icon">🎨</div>
+
+        <h3>Design</h3>
+
+        <p>
+          Graphic Design
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROJECT
+  ========================== -->
+
+  <section id="projects">
+
+    <div class="section-title">
+
+      <h2>Featured <span>Project</span></h2>
+
+      <p>Academic project</p>
+
+    </div>
+
+
+    <div class="project-card">
+
+      <div class="project-number">
+        PROJECT 01
+      </div>
+
+      <h3>
+        Online Learning Portal Based on Generative AI
+      </h3>
+
+      <p>
+        Built an AI-powered learning portal offering
+        personalized content, instant doubt resolution,
+        and automated assessments.
+      </p>
+
+      <div class="tech-list">
+
+        <span class="tech">Python</span>
+
+        <span class="tech">SQL</span>
+
+        <span class="tech">Generative AI</span>
+
+        <span class="tech">Web Technologies</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       INTERNSHIPS
+  ========================== -->
+
+  <section id="internships">
+
+    <div class="section-title">
+
+      <h2>Internship <span>Experience</span></h2>
+
+      <p>Training and practical exposure</p>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+      <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-card">
+
+          <h3>
+            Full-Stack Developer Intern
+          </h3>
+
+          <div class="company">
+            Codec Technology · 2026
+          </div>
+
+          <p>
+            Gained hands-on exposure to frontend/backend
+            development, database integration and
+            software workflows.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-card">
+
+          <h3>
+            Artificial Intelligence Intern
+          </h3>
+
+          <div class="company">
+            Codec Technology · 2026
+          </div>
+
+          <p>
+            Learned core AI concepts and explored
+            AI-based problem-solving applications.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-card">
+
+          <h3>
+            Cloud Computing Intern
+          </h3>
+
+          <div class="company">
+            Internshala · 2025
+          </div>
+
+          <p>
+            Gained exposure to cloud services,
+            infrastructure and deployment concepts.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-card">
+
+          <h3>
+            Graphic Design Intern
+          </h3>
+
+          <div class="company">
+            Internshala · 2025
+          </div>
+
+          <p>
+            Learned graphic design principles and
+            visual communication fundamentals.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CERTIFICATIONS
+  ========================== -->
+
+  <section id="certifications">
+
+    <div class="section-title">
+
+      <h2>Certifi<span>cations</span></h2>
+
+      <p>Courses and certifications</p>
+
+    </div>
+
+
+    <div class="cert-grid">
+
+
+      <div class="cert-card">
+
+        <h3>
+          NPTEL – Internet of Things
+        </h3>
+
+        <p>
+          2025
+        </p>
+
+      </div>
+
+
+      <div class="cert-card">
+
+        <h3>
+          NPTEL – Communication Networks
+        </h3>
+
+        <p>
+          2026
+        </p>
+
+      </div>
+
+
+      <div class="cert-card">
+
+        <h3>
+          Python Essentials Course
+        </h3>
+
+        <p>
+          Cisco
+        </p>
+
+      </div>
+
+
+      <div class="cert-card">
+
+        <h3>
+          30 Days Power BI Micro Course
+        </h3>
+
+        <p>
+          SkillCourse
+        </p>
+
+      </div>
+
+
+      <div class="cert-card">
+
+        <h3>
+          Microsoft Excel
+        </h3>
+
+        <p>
+          Beginner to Advanced · SkillCourse
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       LANGUAGES
+  ========================== -->
+
+  <section>
+
+    <div class="section-title">
+
+      <h2>Languages</h2>
+
+      <p>Communication</p>
+
+    </div>
+
+
+    <div class="languages">
+
+      <div class="language">
+        Telugu · Native
+      </div>
+
+      <div class="language">
+        English · Professional Working Proficiency
+      </div>
+
+      <div class="language">
+        Hindi · Basic Working Proficiency
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================== -->
+
+  <section id="contact">
+
+    <div class="section-title">
+
+      <h2>Let's <span>Connect</span></h2>
+
+      <p>Feel free to reach out</p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+      <p>
+        I am currently looking for opportunities where
+        I can apply my technical knowledge and continue
+        growing as a software professional.
+      </p>
+
+
+      <div class="contact-links">
+
+        <a
+          href="mailto:ankamabhinaya07@gmail.com"
+          class="btn btn-primary"
+        >
+          Email Me
+        </a>
+
+
+        <a
+          href="http://www.linkedin.com/in/ankam-abhinaya"
+          target="_blank"
+          class="btn btn-secondary"
+        >
+          LinkedIn
+        </a>
+
+
+        <a
+          href="https://github.com/Ankam-Abhinaya"
+          target="_blank"
+          class="btn btn-secondary"
+        >
+          GitHub
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      © 2026 Ankam Abhinaya · B.Tech CSE
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
